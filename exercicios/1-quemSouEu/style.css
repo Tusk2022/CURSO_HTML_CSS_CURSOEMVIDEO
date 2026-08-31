@@ -1,0 +1,22 @@
+body{
+  background-color: rgb(32, 32, 32);
+  font: normal 16px Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+
+#RIN {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#favicon {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+#Tusk {
+  color: aqua;
+}
