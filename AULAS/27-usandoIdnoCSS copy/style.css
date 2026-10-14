@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+@font-face {
+  font-family: '911porshe';
+  src: url(fonts/911porschav3.ttf);
+  font-size: 2em;
+  font-weight: 2em;
+}
+
+body{
+  background-color: rgb(212, 222, 231);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(97, 94, 94);
+}
+
+h1{
+  color: #7D848A;
+  font-family: '911porshe', 'Times New Roman', Times, serif;
+}
+
+h1#principal{
+  text-align: center;
+  color: #C8D1DB;
+  background-color: #585D61;
+}
+
+h2{
+  color: #A2AAB3;
+  font-family: '911porshe', 'Times New Roman', Times, serif;
+}
+
+.basico{
+  text-align: left;
+  color: rgb(138, 226, 5);
+}
+
+.intermediario{
+  text-align: left;
+  color: rgb(255, 255, 0);
+}
+
+.avancado{
+  text-align: left;
+  color: #ec0e0e;
+}
+
+.marcacao{
+  color: #585D61;
+  font-weight: bold;
+}

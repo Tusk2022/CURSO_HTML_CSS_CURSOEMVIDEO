@@ -1,0 +1,164 @@
+@font-face {
+  font-family: '911porshe';
+  src: url('fonts/911porschav3.ttf') format(truetype);
+  font-size: normal;
+  font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(48, 48, 48);
+    justify-content: center; /* Alinha no meio horizontalmente */
+    align-items: center;     /* Alinha no meio verticalmente */
+    min-height: 100vh;       /* Faz o fundo ocupar a tela inteira */
+}
+
+
+header{
+    background-color: rgb(173, 210, 241);
+    padding: 20px;
+}
+
+.container{
+    max-width: 1400px;
+    padding: 3%;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .titulo{
+    font-size: 25px;
+    font-family: '911porshe', italic;
+    color: white;
+    font-weight: bold;
+    text-shadow:2px 1px 2px rgb(60, 73, 83);
+}
+
+nav .titulo #paragrafo{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-shadow:2px 1px 2px rgb(60, 73, 83);
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    border-radius: 30px;
+    transition: 0.6s;
+}
+nav ul li a:hover{
+    background-color: rgb(60, 73, 83);
+}
+
+/* CONTEUDO */
+
+#conteudo{
+    padding: 45px;
+    margin: 0 60px auto;
+}
+
+.historia{
+
+}
+.historia h2{
+    font-family: '911porshe', italic;
+    padding: 0px 0px 10px;
+}
+
+.historia p{
+    padding: 5px 0px 10px;
+}
+
+.historia h3{
+    font-family: '911porshe', italic;
+    padding: 5px 0px 5px;
+    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(173, 210, 241));
+}
+
+.historia a{
+    color: rgb(146, 178, 204);
+    text-decoration: none;
+}
+
+.historia a:hover{
+    color: rgb(35, 128, 204);
+}
+
+.historia strong{
+    color: rgb(35, 128, 204);
+}
+
+.moldura-iframe {
+      background-color: rgb(146, 178, 204);
+      padding: 16px;               
+      border-radius: 16px;         
+      border: 3px solid rgb(128, 156, 179);   
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); 
+      
+      max-width: 640px;       
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+  
+    .proporcao-video {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;     
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;        
+    }
+
+
+    .proporcao-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+/* IMAGENS */
+
+#dan-droids{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#irina-blok{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+}
+
+#bugdroid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}

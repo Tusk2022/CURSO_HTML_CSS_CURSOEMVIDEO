@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grouping Tags</title>
+
+  <style>
+    body {
+      background-color: gray;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0px;
+      
+    }
+
+    header {
+      color: black;
+      background-color: rgb(212, 211, 211);
+      padding: 10px;
+      margin: 10px;
+    }
+    
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+      font-size: 50px;
+      background-color: rgb(56, 56, 56);
+    }
+    
+    #brasil{
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+      font-size: 30px;
+
+    }
+
+    nav {
+      background-color: rgb(56, 56, 56);
+      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.438);
+    }
+    nav > a {
+      font-size: 25px;
+      color: aliceblue;
+      padding: 10px;
+      text-decoration: none;
+    }
+    nav > a:hover {
+      color: rgb(75, 74, 74);
+      text-decoration: underline;
+    }
+    main{
+      color: black;
+      background-color: rgb(212, 211, 211);
+      padding: 10px;
+      margin: 10px;
+    }
+
+    article{
+      padding: 10px;
+      margin: 2px;
+      color: white;
+      background-color: rgb(56, 56, 56);
+    }
+    
+    article > aside{
+      background-color: rgb(22, 22, 22);
+    }
+
+    footer{
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      margin: 0;
+    }
+
+    footer > p{
+      margin: 0px;
+    }
+
+    #tusk{
+      color: white;
+      text-decoration: none;
+    }
+    #tusk:hover{
+      color: rgb(88, 162, 247);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu site!</h1>
+    <nav>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </nav>
+  </header>
+  <main>
+    <section id="assuntos">
+      <h2>Esportes, política e Tecnologia</h2>
+    </section>
+    <section id="noticias">
+      <article>
+        <h2 id="brasil">Noticía sobre o Brasil</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptates quae, nam nulla, officia doloribus sed aperiam commodi facilis deleniti corrupti excepturi eum ipsum eos eaque numquam animi obcaecati enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates ea provident vitae amet modi quos fuga. Repellat deleniti sit tenetur velit eum ducimus eaque earum quisquam dolore. Aut, asperiores.</p>
+        <aside>
+          <p>Artigo escrito por José Benetito</p>
+        </aside>
+      </article>      
+    </section>
+  </main>
+  <footer><p>Desenvolvido por <a href="https://tusk-dev.com.br/" id="tusk" target="_target = _blank" rel="external">Tusk</a></p></footer>
+</body>
+</html>

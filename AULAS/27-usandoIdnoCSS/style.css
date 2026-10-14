@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+@font-face {
+  font-family: '911porshe';
+  src: url(fonts/911porschav3.ttf);
+  font-size: 2em;
+  font-weight: 2em;
+}
+
+body{
+  background-color: rgb(212, 222, 231);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(97, 94, 94);
+}
+
+h1{
+  color: rgb(129, 174, 214);
+  font-family: '911porshe', 'Times New Roman', Times, serif;
+}
+
+h1#principal{
+  text-align: center;
+  background-color: rgb(166, 196, 223);
+}
+
+h2{
+  color: rgb(131, 155, 179);
+  font-family: '911porshe', 'Times New Roman', Times, serif;
+}
