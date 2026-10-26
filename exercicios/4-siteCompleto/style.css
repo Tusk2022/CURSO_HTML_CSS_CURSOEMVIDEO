@@ -1,164 +1,553 @@
+
 @font-face {
-  font-family: '911porshe';
-  src: url('fonts/911porschav3.ttf') format(truetype);
-  font-size: normal;
-  font-style: normal;
+    font-family: "911porshe";
+    src: url("fonts/911porschav3.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-*{
+/* RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(48, 48, 48);
-    justify-content: center; /* Alinha no meio horizontalmente */
-    align-items: center;     /* Alinha no meio verticalmente */
-    min-height: 100vh;       /* Faz o fundo ocupar a tela inteira */
+    background-color: #f5f8fb;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
-
-header{
-    background-color: rgb(173, 210, 241);
-    padding: 20px;
+/* CABEÇALHO */
+header {
+    background-color: rgb(1, 40, 71);
+    padding: 22px 20px;
+    position: relative;
+    z-index: 10;
 }
 
-.container{
+.container {
     max-width: 1400px;
-    padding: 3%;
+    width: 100%;
+    padding: 0 3%;
     margin: 0 auto;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
-nav .titulo{
-    font-size: 25px;
-    font-family: '911porshe', italic;
+/* TÍTULO */
+nav .titulo {
+    font-family: "911porshe", Arial, sans-serif;
     color: white;
+    font-size: 25px;
     font-weight: bold;
-    text-shadow:2px 1px 2px rgb(60, 73, 83);
+    line-height: 1.4;
+    text-shadow: 2px 1px 2px rgb(60, 73, 83);
 }
 
-nav .titulo #paragrafo{
-    font-size: 16px;
+nav .titulo #paragrafo {
+    margin-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-weight: bold;
-    text-shadow:2px 1px 2px rgb(60, 73, 83);
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+    text-shadow: none;
 }
 
-nav ul{
+/* MENU DESKTOP */
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
     list-style: none;
 }
 
-nav ul li{
-    display: inline;
+nav ul li {
+    display: block;
 }
 
-nav ul li a{
-    padding: 10px 20px;
+nav ul li a {
+    display: block;
+    padding: 10px 16px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 17px;
     color: white;
     border-radius: 30px;
-    transition: 0.6s;
+    transition: background-color 0.25s ease;
 }
-nav ul li a:hover{
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
     background-color: rgb(60, 73, 83);
+    outline: none;
 }
 
-/* CONTEUDO */
-
-#conteudo{
-    padding: 45px;
-    margin: 0 60px auto;
+/* BOTÃO DOS TRÊS PONTINHOS */
+.menu-toggle {
+    display: none;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.historia{
-
-}
-.historia h2{
-    font-family: '911porshe', italic;
-    padding: 0px 0px 10px;
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
-.historia p{
-    padding: 5px 0px 10px;
+.menu-toggle:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
 
-.historia h3{
-    font-family: '911porshe', italic;
-    padding: 5px 0px 5px;
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(173, 210, 241));
-}
-
-.historia a{
-    color: rgb(146, 178, 204);
-    text-decoration: none;
-}
-
-.historia a:hover{
-    color: rgb(35, 128, 204);
-}
-
-.historia strong{
-    color: rgb(35, 128, 204);
-}
-
-.moldura-iframe {
-      background-color: rgb(146, 178, 204);
-      padding: 16px;               
-      border-radius: 16px;         
-      border: 3px solid rgb(128, 156, 179);   
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); 
-      
-      max-width: 640px;       
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-  
-    .proporcao-video {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;     
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;        
-    }
-
-
-    .proporcao-video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-/* IMAGENS */
-
-#dan-droids{
+.menu-toggle span {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+/* CONTEÚDO PRINCIPAL */
+#conteudo {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 45px 24px;
+}
+
+.historia h1,
+.historia h2 {
+    font-family: "911porshe", Arial, sans-serif;
+    line-height: 1.4;
+}
+
+.historia h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.historia .subtitulo {
+    margin: 24px 0 12px;
+    padding: 7px 12px;
+    font-size: 23px;
+    background-image: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0),
+        rgb(173, 210, 241)
+    );
+    border-radius: 5px;
+}
+
+.historia p {
+    margin-bottom: 12px;
+    text-indent: 30px;
+    text-align: justify;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
+
+.historia a {
+    color: rgb(35, 105, 165);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.historia a:hover {
+    color: rgb(20, 75, 130);
+    text-decoration: underline;
+}
+
+.historia strong {
+    color: rgb(35, 105, 165);
+}
+
+/* IMAGENS */
+#dan-droids,
+#irina-blok,
+#bugdroid {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
+    object-fit: contain;
+}
+
+#dan-droids {
     width: 50%;
 }
 
-#irina-blok{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#irina-blok {
     width: 80%;
-    height: auto;
 }
 
-#bugdroid{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+#bugdroid {
+    width: 25%;
+}
+
+/* VÍDEO */
+.moldura-iframe {
+    width: 100%;
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 14px;
+    background-color: rgb(146, 178, 204);
+    border: 3px solid rgb(128, 156, 179);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(7, 104, 184, 0.2);
+}
+
+.proporcao-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.proporcao-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CAIXA DE CURIOSIDADES */
+.moldura-lista {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.lista {
+    width: 100%;
+    max-width: 640px;
+    margin: 30px auto;
+    padding: 24px;
+    background-color: rgb(220, 234, 245);
+    border: 1px solid rgb(190, 212, 230);
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(7, 104, 184, 0.15);
+}
+
+.lista h2 {
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    font-family: "911porshe", Arial, sans-serif;
+    font-size: 24px;
+    background-image: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0),
+        rgb(173, 210, 241)
+    );
+    border-radius: 8px;
+}
+
+.lista p {
+    margin-bottom: 16px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* LISTA EM DUAS COLUNAS */
+.lista-check {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 20px;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-check li {
+    position: relative;
+    padding-left: 24px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.lista-check li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #285ba7;
+    font-weight: bold;
+}
+
+/* MENSAGEM FINAL */
+#fim {
+    width: 100%;
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 22px;
+    text-align: center;
+    text-indent: 0;
+    background-color: rgb(220, 234, 245);
+    border: 1px solid rgb(190, 212, 230);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(7, 104, 184, 0.12);
+}
+
+/* RODAPÉ */
+#creditos {
+    width: 100%;
+    padding: 22px 15px;
+    background-color: rgb(1, 40, 71);
+    color: aliceblue;
+    text-align: center;
+    font-family: "911porshe", Arial, sans-serif;
+}
+
+#creditos address {
+    margin-bottom: 4px;
+    font-style: normal;
+}
+
+#creditos a {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#creditos a:hover {
+    color: rgb(173, 210, 241);
+}
+
+/* TABLETS E CELULARES */
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 12px;
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    nav {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav .titulo {
+        flex: 1;
+        min-width: 0;
+        font-size: clamp(17px, 4vw, 22px);
+        line-height: 1.35;
+        overflow-wrap: break-word;
+    }
+
+    nav .titulo #paragrafo {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* EXIBE OS TRÊS PONTINHOS */
+    .menu-toggle {
+        display: flex;
+        align-self: center;
+    }
+
+    /* MENU RECOLHIDO */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 5px;
+        width: 100%;
+        margin-top: 4px;
+        padding: 9px;
+        background-color: rgb(10, 54, 85);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* MENU ABERTO */
+    nav ul.menu-aberto {
+        display: flex;
+        animation: aparecer-menu 0.22s ease;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        padding: 13px 14px;
+        font-size: 16px;
+        border-radius: 9px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus-visible {
+        background-color: rgb(60, 73, 83);
+    }
+
+    /* CONTEÚDO */
+    #conteudo {
+        padding: 28px 17px;
+    }
+
+    .historia h1 {
+        font-size: 25px;
+    }
+
+    .historia .subtitulo {
+        margin-top: 22px;
+        font-size: 21px;
+    }
+
+    .historia p {
+        font-size: 15px;
+        line-height: 1.75;
+        text-indent: 18px;
+    }
+
+    /* IMAGENS */
+    #dan-droids {
+        width: 85%;
+    }
+
+    #irina-blok {
+        width: 100%;
+    }
+
+    #bugdroid {
+        width: 45%;
+    }
+
+    /* VÍDEO */
+    .moldura-iframe {
+        margin: 28px auto;
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    /* LISTA */
+    .lista {
+        padding: 18px;
+        margin: 25px auto;
+    }
+
+    .lista h2 {
+        font-size: 21px;
+    }
+
+    .lista-check {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #fim {
+        padding: 18px;
+        font-size: 14px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 380px) {
+
+    header {
+        padding: 15px 10px;
+    }
+
+    nav .titulo {
+        font-size: 16px;
+    }
+
+    nav .titulo #paragrafo {
+        font-size: 12px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    #conteudo {
+        padding: 22px 13px;
+    }
+
+    .historia h1 {
+        font-size: 23px;
+    }
+
+    .historia .subtitulo {
+        font-size: 19px;
+    }
+
+    .lista {
+        padding: 14px;
+    }
+
+    #bugdroid {
+        width: 55%;
+    }
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer-menu {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPEITA A PREFERÊNCIA DE MENOS ANIMAÇÕES */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
