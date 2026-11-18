@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua primeira tabela em HTML</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table{
+      width: 400px;
+      border-collapse: collapse;
+    }
+
+    tr.linha{
+      background-color: rgb(105, 105, 105);
+    }
+    
+    td.dado{
+      background-color: yellow;
+    }
+
+    td{
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tabelas HTML</h1>
+
+  <table>
+    <tr> <!--Primeira linha-->
+      <td>a1</td>
+      <td>b1</td>
+      <td>c1</td>
+    </tr>
+    <tr class="linha"> <!--Primeira segunda-->
+      <td>a2</td>
+      <td>b2</td>
+      <td>c2</td>
+    </tr>
+    <tr> <!--Primeira terceira-->
+      <td>a3</td>
+      <td>b3</td>
+      <td>c3</td>
+    </tr> <!--Primeira quarta-->
+    <tr>
+      <td>a4</td>
+      <td class="dado">b4</td>
+      <td>c4</td>
+    </tr>
+  </table>
+</body>
+</html>
